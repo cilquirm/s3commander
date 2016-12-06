@@ -1,3 +1,15 @@
+form.connect-form {
+    border: 2px solid #eee;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+div.jumbotron {
+    text-align: center;
+    color: #fff;
+    background-color: #6ea4bf;
+}
+
 div.s3contents {
     border: 1px dashed #ccc;
     padding: 4px;
