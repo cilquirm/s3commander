@@ -1,34 +1,47 @@
-<div class="col-md-8">
-    <h2>Connect</h2>
-    <form role="form">
-        <div class="form-group">
-            <label for="txtAccessKey">AWS Access Key</label>
-            <input type="password" class="form-control" id="txtAccessKey" />
+<div class="container-fluid">
+    <div class="row">
+        <div class="jumbotron">
+            <h2>S3 Commander</h2>
+            <p>Web-based S3 file browser</p>
         </div>
-        <div class="form-group">
-            <label for="txtSecretKey">AWS Secret Key</label>
-            <input type="password" class="form-control" id="txtSecretKey" />
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form class="connect-form" role="form">
+                <div class="form-group">
+                    <label for="txtAccessKey">AWS Access Key</label>
+                    <input type="password" class="form-control" id="txtAccessKey" />
+                </div>
+                <div class="form-group">
+                    <label for="txtSecretKey">AWS Secret Key</label>
+                    <input type="password" class="form-control" id="txtSecretKey" />
+                </div>
+                <div class="form-group">
+                    <label for="txtBucket">S3 Bucket</label>
+                    <input type="text" class="form-control" id="txtBucket" />
+                </div>
+                <div class="form-group">
+                    <label for="txtPrefix">Prefix</label>
+                    <input type="text" class="form-control" id="txtPrefix" value="/" />
+                </div>
+                <div class="form-group">
+                    <label for="txtEndpoint">Endpoint</label>
+                    <input type="text" class="form-control" id="txtEndpoint" value="s3.amazonaws.com" />
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="chkVersions" />
+                    <label for="chkVersions">Show Versions</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="chkConfirm" />
+                    <label for="chkConfirm">Confirm Delete</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Connect</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="txtBucket">S3 Bucket</label>
-            <input type="text" class="form-control" id="txtBucket" />
-        </div>
-        <div class="form-group">
-            <label for="txtPrefix">Prefix</label>
-            <input type="text" class="form-control" id="txtPrefix" value="/" />
-        </div>
-        <div class="form-group">
-            <label for="txtEndpoint">Endpoint</label>
-            <input type="text" class="form-control" id="txtEndpoint" value="s3.amazonaws.com" />
-        </div>
-        <div class="form-group">
-            <input type="checkbox" id="chkVersions" />
-            <label for="chkVersions">Show Versions</label>
-        </div>
-        <div class="form-group">
-            <input type="checkbox" id="chkConfirm" />
-            <label for="chkConfirm">Confirm Delete</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Connect</button>
-    </form>
+        <div class="col-md-4"></div>
+    </div>
 </div>
