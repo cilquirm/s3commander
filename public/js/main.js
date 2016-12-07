@@ -5,6 +5,9 @@ function setupConnectForm() {
     $('.connect-form').hide();
     $('.s3-browser').show();
 
+    // Set s3 bucket name in browser
+    $('.s3-bucket h2').text($('#txtBucket').val());
+
     // Setup s3 commander
     $("#s3commander").s3commander({
       sAccessKey: $("#txtAccessKey").val(),
