@@ -10,6 +10,20 @@ div.jumbotron {
     background-color: #6ea4bf;
 }
 
+div.s3-bucket {
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+div.s3-bucket h2 {
+    margin: 0;
+    float: left;
+}
+
+div.s3-bucket button {
+    float: right;
+}
+
 div.s3contents {
     border: 1px dashed #ccc;
     padding: 4px;
