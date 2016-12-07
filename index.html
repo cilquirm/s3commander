@@ -31,35 +31,11 @@
 
         <!-- S3 Commander -->
         <script type="text/javascript" src="public/js/sha1.js"></script>
-        <script type="text/jsx" src="public/js/util.js"></script>
-        <script type="text/jsx" src="public/js/s3backend.js"></script>
+        <script type="text/javascript" src="public/js/util.js"></script>
+        <script type="text/javascript" src="public/js/s3backend.js"></script>
         <script type="text/jsx" src="public/js/s3commander.js"></script>
 
-        <!-- Setup Form -->
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $('#main-body').load('views/_connect.html', function(){
-                    $("form").submit(function(){
-                        // Hide connect form and show s3 browser
-                        $('.connect-form').hide();
-                        $('.s3-browser').show();
-
-                        // Setup s3 commander
-                        $("#s3commander").s3commander({
-                            sAccessKey: $("#txtAccessKey").val(),
-                            sSecretKey: $("#txtSecretKey").val(),
-                            sBucket: $("#txtBucket").val(),
-                            sPrefix: $("#txtPrefix").val(),
-                            sEndpoint: $("#txtEndpoint").val(),
-                            bShowVersions: $("#chkVersions").is(":checked"),
-                            bConfirmDelete: $("#chkConfirm").is(":checked"),
-                            iMaxFilesizeMB: 10240
-                        });
-
-                        return false;
-                    });
-                });
-            });
-        </script>
+        <!-- Main -->
+        <script type="text/javascript" src="public/js/main.js"></script>
     </body>
 </html>
