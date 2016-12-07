@@ -38,8 +38,13 @@
         <!-- Setup Form -->
         <script type="text/javascript">
             $(document).ready(function(){
-                $('#main-body').load('views/_connect.html', function() {
+                $('#main-body').load('views/_connect.html', function(){
                     $("form").submit(function(){
+                        // Hide connect form and show s3 browser
+                        $('.connect-form').hide();
+                        $('.s3-browser').show();
+
+                        // Setup s3 commander
                         $("#s3commander").s3commander({
                             sAccessKey: $("#txtAccessKey").val(),
                             sSecretKey: $("#txtSecretKey").val(),
