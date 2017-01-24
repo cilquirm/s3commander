@@ -1,0 +1,29 @@
+{
+  "name": "s3commander",
+  "version": "1.0.0",
+  "description": "A S3 Browser and Manipulator",
+  "main": "s3commander.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cilquirm/s3commander.git"
+  },
+  "keywords": [
+    "s3",
+    "browser",
+    "commander",
+    "react",
+    "jquery"
+  ],
+  "author": "Alexandru Barbur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cilquirm/s3commander/issues"
+  },
+  "homepage": "https://github.com/cilquirm/s3commander#readme",
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  }
+}

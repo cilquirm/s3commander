@@ -20,12 +20,11 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
 
         <!-- React -->
-        <script src="https://fb.me/react-0.12.2.js"></script>
-        <script src="https://fb.me/JSXTransformer-0.12.2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
 
         <!-- S3 Commander -->
-        <script src="sha1.js"></script>
-        <script type="text/jsx" src="s3commander.js"></script>
+        <script src="build/s3commander.min.js"></script>
         <link rel="stylesheet" href="s3commander.css" />
     </head>
     <body>
@@ -36,15 +35,15 @@
                     <form role="form">
                         <div class="form-group">
                             <label for="txtAccessKey">AWS Access Key</label>
-                            <input type="password" class="form-control" id="txtAccessKey" />
+                            <input type="password" class="form-control" id="txtAccessKey"  value=""/>
                         </div>
                         <div class="form-group">
                             <label for="txtSecretKey">AWS Secret Key</label>
-                            <input type="password" class="form-control" id="txtSecretKey" />
+                            <input type="password" class="form-control" id="txtSecretKey" value=""/>
                         </div>
                         <div class="form-group">
                             <label for="txtBucket">S3 Bucket</label>
-                            <input type="text" class="form-control" id="txtBucket" />
+                            <input type="text" class="form-control" id="txtBucket" value=""/>
                         </div>
                         <div class="form-group">
                             <label for="txtPrefix">Prefix</label>
