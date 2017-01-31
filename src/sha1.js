@@ -12,7 +12,7 @@
  * the server-side, but the defaults work in most cases.
  */
 var hexcase = 0;  /* hex output format. 0 - lowercase; 1 - uppercase        */
-var b64pad  = ""; /* base-64 pad character. "=" for strict RFC compliance   */
+var b64pad  = "="; /* base-64 pad character. "=" for strict RFC compliance   */
 
 /*
  * These are the functions you'll usually want to call
@@ -327,4 +327,28 @@ function safe_add(x, y)
 function bit_rol(num, cnt)
 {
   return (num << cnt) | (num >>> (32 - cnt));
+}
+
+module.exports = {
+    hex_sha1: hex_sha1,
+    b64_sha1: b64_sha1,
+    any_sha1: any_sha1,
+    hex_hmac_sha1: hex_hmac_sha1,
+    b64_hmac_sha1: b64_hmac_sha1,
+    any_hmac_sha1: any_hmac_sha1,
+    rstr_sha1: rstr_sha1,
+    rstr2hex: rstr2hex,
+    rstr2b64: rstr2b64,
+    rstr2any: rstr2any,
+    str2rstr_utf8: str2rstr_utf8,
+    str2rstr_utf16le: str2rstr_utf16le,
+    str2rstr_utf16be: str2rstr_utf16be,
+    rstr2binb: rstr2binb,
+    binb2rstr: binb2rstr,
+    binb_sha1: binb_sha1,
+    sha1_ft: sha1_ft,
+    sha1_kt: sha1_kt,
+    safe_add: safe_add,
+    bit_rol: bit_rol,
+    sha1_vm_test: sha1_vm_test
 }
