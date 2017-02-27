@@ -25,5 +25,9 @@
   "homepage": "https://github.com/cilquirm/s3commander#readme",
   "devDependencies": {
     "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "json-loader": "^0.5.4",
+    "mime-types": "^2.1.14"
   }
 }

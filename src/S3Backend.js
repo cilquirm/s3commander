@@ -69,20 +69,22 @@ S3Backend.prototype.signRequest = function(sMethod, pResource, oParams) {
 S3Backend.prototype.getBucketURL = function() {
     // we can't use https:// if the bucket name contains a '.' (dot)
     // because the SSL certificates won't work
-    var protocol = "https";
+  var protocol = "https";
+  /*
     if (this.opts.sBucket.indexOf(".") !== -1) {
         protocol = "http";
         console.log("WARNING: Using clear-text transport protocol http:// !");
     }
-
-    // construct the url
-    return protocol + "://" + this.opts.sBucket + "." + this.opts.sEndpoint;
+    */
+  // construct the url
+  return protocol + "://" + this.opts.sEndpoint + "/" + this.opts.sBucket + "/";
+  //return protocol + "://" + this.opts.sBucket + "." + this.opts.sEndpoint;
 };
 
 // Retrieve the REST API URL for the given resource.
 S3Backend.prototype.getResourceURL = function(pResource) {
     var abspath = this.opts.pPrefix.concat(pResource);
-    return this.getBucketURL() + "/" + abspath.getURIEncoded();
+    return this.getBucketURL() +  abspath.getURIEncoded();
 };
 
 // Get the encoded policy and it's signature required to upload files.
@@ -114,10 +116,9 @@ S3Backend.prototype.getPolicyData = function() {
 // The paramters returned by this function should be stored in a <form />
 // element using <input type="hidden" name="..." value="..." /> elements.
 S3Backend.prototype.getUploadParams = function(pFolder) {
-    var uploadpath = this.opts.pPrefix.concat(pFolder).push("${filename}");
+  var uploadpath = this.opts.pPrefix.concat(pFolder).push("${filename}");
     return $.extend(this.getPolicyData(), {
         "AWSAccessKeyId": this.opts.sAccessKey,
-        "Content-Type": "application/octet-stream",
         "key": uploadpath.toString()
     });
 };

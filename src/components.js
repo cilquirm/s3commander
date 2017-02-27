@@ -10,7 +10,7 @@
 var $ = require('jquery');
 var Dropzone = require('dropzone');
 var Path = require('./Path');
-var S3Backend = require('./S3Backend');
+var mimeLookup = require('mime-types').lookup;
 
 // configure sha1.js for RFC compliance
 
@@ -206,18 +206,23 @@ var S3CUploadForm = React.createClass({
             "init": function(){
                 // enable uploading to folders by manipulating the S3 object key
                 // TODO this is S3 specific and violates the backend/frontend barrier
-                this.on("sending", function(file, xhr, formData){
+              this.on("sending", function(file, xhr, formData){
+
+                    var contentType = mimeLookup(file.name) || 'application/octet-stream';
+                    formData.set('Content-Type', contentType);
+
                     if(file.hasOwnProperty("fullPath")) {
                         formData.append("key", new Path(component.props.params.key)
                                         .pop()                  // pop original ${filename} token
                                         .push(file.fullPath)    // push full path to the file
                                         .pop()                  // pop filename component
                                         .push("${filename}")    // push the S3 ${filename} token
-                                        .toString());
+                          .toString());
                     }
                     else {
                         formData.append("key", component.props.params.key);
                     }
+
                 });
             },
             "error": function(file, error){
